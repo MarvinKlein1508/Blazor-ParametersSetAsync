@@ -1,0 +1,16 @@
+﻿@page "/"
+@inject NavigationManager navigationManager
+
+<a href="/Test/10000" class="btn btn-primary">Click here after you put debug point to PageWeithParameter.razor line 11 (DIRECT LINK)</a>
+<br />
+<button @onclick="Navigate" class="btn btn-secondary">Click here after you put debug point to PageWeithParameter.razor line 11 (METHOD)</button>
+
+
+<p>Now visit the URL manually with active Debug point /Test/10000</p>
+@code {
+
+    private void Navigate()
+    {
+        navigationManager.NavigateTo("/Test/10000");
+    }
+}

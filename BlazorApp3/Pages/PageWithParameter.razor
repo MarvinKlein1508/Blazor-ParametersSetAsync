@@ -1,0 +1,14 @@
+﻿@page "/Test/{CustomerId:int}" 
+<h3>PageWithParameter</h3>
+@Count
+@code {
+
+    [Parameter] public int CustomerId { get; set; }
+    public int Count { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Console.WriteLine(CustomerId);
+        await Task.Delay(1000);
+    }
+}
